@@ -6,8 +6,8 @@
 同时，你也将体验不一样的并行程序，比如你将会看到下面这样神奇的程序：
 ```cuda
 __global__ void relu_gpu(float* in, float* out) {
-int i = threadIdx.x;
-out[i] = in[i] > 0 ? in[i] : 0;
+    int i = threadIdx.x;
+    out[i] = in[i] > 0 ? in[i] : 0;
 }
 relu_gpu<<<1, N>>>(d_in, d_out);
 ```
