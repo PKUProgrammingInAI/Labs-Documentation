@@ -5,7 +5,8 @@
 
 助教会及时解答问答墙中的问题, 如果你知道某些问题的答案, 非常欢迎你协助解决问题!
 ## 获取信息的方式 & 提问的艺术
-这部分友情鸣谢这学期选课的一位 linux 俱乐部同学写的[搜索和知识获取](https://missing.lcpu.dev/basic/02-searching-and-question),同时请仔细阅读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+这部分友情鸣谢这学期选课的一位 linux 俱乐部同学写的[搜索和知识获取](https://missing.lcpu.dev/basic/02-searching-and-question), 同时请仔细阅读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 !> 助教写这个并不是助教对你们有意见, 但是是真的希望你们一方面带着自己的思考来提问, 另一方面也为你们以后的开发提高效率. 毕竟把大多数交流耗费在无意义的前情提要上是真的很浪费时间. 
-?> 你们应该也看到了, 我对于认真的提问是相当详细×
+
+?> 你们应该也看到了, 我对于认真的提问回答是多么详细×
