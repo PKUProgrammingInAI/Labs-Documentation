@@ -22,6 +22,27 @@
 > 很不幸的是, 不同电脑上的CUDA版本不一, 助教也无法保证一个版本的CUDAToolkit能在所有的机器上都兼容, 因此我们需要同学们自己来配这个环境. 
 > - 一方面, 相信在这篇文档的帮助下, 配好环境并不是一件很难的事, 毕竟去年我们还是自己摸索的呢.
 > - 另一方面, 这个过程也能锻炼你们一些作为开发者的基本素养. 
+
+?> 在此插播一条消息: 根据今年同学的反馈, 助教发现平时主要管理 python 环境的 conda 也可以拿来管理一些常用的软件包, 查询后发现本课程用到的软件包都可以用 conda 来管理, 因此粉毛助教决定增加用 conda 配置的教程(反正本来也需要装 conda ). 
+
+## 装个 Anaconda 先
+现在Anaconda本体似乎需要注册账户才可以下载分发版, 原来通过 TUNA 镜像站的方式已经不太可靠, 因此助教这里提供两种方案
+- 如果你愿意注册账户, 那么注册账户后下载安装即可. 
+- 如果不愿意, 你可以用 conda 的另一个实现: [mamba](https://github.com/mamba-org/mamba), 效率还高出 Anaconda 一大截, 但是命令和 conda 一模一样, 完全没有额外学习成本. 
+
+实在写不动了, 一些细节暂时略去, 后面再补充.
+
+如果你安装成功, 输入`conda --version`
+```
+$ PS C:\Windows\System32> conda --version
+conda 23.1.0
+```
+如果没有的话, 请输入`conda init`, conda会把你使用的shell增加conda的命令(简单地说). 
+
+还没有的话, 就手动加一下环境变量(但是按理说安装过程会自动添加, 所以一般不会有这种情况).
+
+之后,你可以用`conda create -n 随便起个名字`来创建一个conda环境, 然后使用`conda activate 随便起的名字`进入这个环境.
+
 ## Windows 平台
 ?> 这助教怎么嘴上说着不要身体却很诚实, 明明说不推荐用 Windows 却还是出了教程...
 
@@ -59,7 +80,9 @@ Build cuda_11.8.r11.8/compiler.31833905_0
 ```
 出现上面类似的就算成功了.
 
-实际上, 我的cuda工具链已经很久没有更新过了, 反而是中间显卡驱动更新了好几次, 顺带着把支持的CUDA版本也抬高了, 才会出现目前两个版本对不上的情况, 但是不要紧, 如果实在不兼容再换也是没问题的.
+当然,你也可以在conda环境下用`conda install -c nvidia cuda`来安装CudaToolkit, 更多信息请看[这里](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#conda-installation)
+
+?> 实际上, 我的cuda工具链已经很久没有更新过了, 反而是中间显卡驱动更新了好几次, 顺带着把支持的CUDA版本也抬高了, 才会出现目前两个版本对不上的情况, 但是不要紧, 如果实在不兼容再换也是没问题的.
 
 然后你需要一个构建工具, 为什么需要呢, 我们且先按下不表, 配好就是.
 
@@ -76,4 +99,13 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 这就ok了.
 
-未完待续...
+在conda环境下, `conda install -c anaconda cmake`即可快速安装cmake.
+
+然后是python, 非常简单, 在conda环境下`conda install python=你想要的版本`就可以了.
+
+## WSL
+WSL上只有CudaToolkit的安装不太一样, 在助教调查后还没有发现WSL版的CudaToolkit在conda上的分发, 所以WSL上的CudaToolkit不建议用conda装, 需要在Nvidia官网选择WSL-Ubuntu版.
+
+!> 不要选Ubuntu, 在WSL中Cuda驱动已经安装在windows下了, 而如果选Ubuntu, 会附带一份驱动, 装在WSL下可能会出问题.
+
+TODO...
