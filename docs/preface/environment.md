@@ -1,5 +1,11 @@
 # 环境配置
-?> 或许这会是你们最想在文档里看到的一个东西? 
+
+!> 本章仍在缓慢施工中...   
+如果你有什么想法欢迎在文档仓库提issue, 助教打算先去写别的东西.   
+本章文档不是很完善, 但是结合你的思考应该足够构建出一个完整的实验环境了. 
+
+
+?> 或许这会是你们最想在文档里看到的一个东西?   
 
 正所谓有句话说得好, 万事开头难. 对于写项目的开发者来说, 开头的事就是要配环境. "工欲善其事, 则必先利其器". 一个好的环境十分珍贵, 应该让同志们先配. 想想助教我去年选课时候都是摸着石头过河, 一把辛酸泪啊T_T
 
@@ -15,6 +21,7 @@
 - `CUDAToolkit`工具链
 - `CMake`或者是别的支持CUDA的构建工具(当然visual studio也可以)
 - 一个`python`环境, 版本可以自己来定.
+- python底下应该还需要一个torch环境. 
 
 如果以上的东西你都会自己准备, 那么恭喜你, 这一节不需要看了×
 
@@ -102,6 +109,14 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
 在conda环境下, `conda install -c anaconda cmake`即可快速安装cmake.
 
 然后是python, 非常简单, 在conda环境下`conda install python=你想要的版本`就可以了.
+
+至于pytorch, 推荐在pytorch的[官网下载页面](https://pytorch.org/get-started/locally/)选择对应的版本
+
+> 你可以选择conda, 也可以选择pip, 但是一旦选择过pip安装过包之后, 就不要再用conda安装, 反之可以.
+> CUDA版本的选择: 选择一个和你电脑上比较接近但又小于你电脑CUDA版本的版本号
+> 比如我是12.6, 那我可以都选, 但是最好选择12.4
+
+然后进终端, 在你的conda环境下执行命令等待即可.
 
 ## WSL
 WSL上只有CudaToolkit的安装不太一样, 在助教调查后还没有发现WSL版的CudaToolkit在conda上的分发, 所以WSL上的CudaToolkit不建议用conda装, 需要在Nvidia官网选择WSL-Ubuntu版.
